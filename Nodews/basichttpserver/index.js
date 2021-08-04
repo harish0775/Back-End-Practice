@@ -1,9 +1,17 @@
 const http = require('http');
-const port  = 3000;
+const port  = 8000;
+const fs = require('fs');
 function requestHandler(req,res){
     console.log(res.url);
     res.writeHead(200,{'Content-type' : 'text/html'});
-    res.end('<h1> Harish</h1>');
+    fs.readFile('index.html',function(err,data){
+        if(err){
+            console.log('Error' ,err);
+            return res.end('<h1> Error!</h1>');
+        }
+        return res.end(data);
+    })
+  
 }
 const server = http.createServer(requestHandler);
 
