@@ -4,6 +4,7 @@
   "description": "My First Contact List",
   "main": "index.js",
   "scripts": {
+    "start":"nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/harish0775/Back-End-Practice/issues"
   },
-  "homepage": "https://github.com/harish0775/Back-End-Practice#readme"
+  "homepage": "https://github.com/harish0775/Back-End-Practice#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
