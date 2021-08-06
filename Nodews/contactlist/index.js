@@ -7,6 +7,7 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname ,'views'));
 app.use(express.urlencoded());
+app.use(express.static('assets'));
 app.use(function(req,res,next){
     req.name = "Harish";
     console.log('Middleware 1 is called');
@@ -34,7 +35,7 @@ var contactlist=[
       phone : "2309209300"
   }
 ]
-app.get('/profile',function(req,res){
+app.get('/',function(req,res){
     return res.render('home',{title : "My Contact list"});
 });
 app.get('/practice',function(req,res){
