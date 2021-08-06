@@ -9,6 +9,13 @@ app.set('views',path.join(__dirname ,'views'));
 app.get('/profile',function(req,res){
     return res.render('home',{title : "My Contact list"});
 });
+app.get('/practice',function(req,res){
+    return res.render('practice',{title : "practice title" })
+})
+app.get('/form',function(req,res){
+    return res.render('Form',{title : "<title>title</title>"})
+})
+
 app.listen(port,function(err){
     if(err){
         console.log('Error',err);
