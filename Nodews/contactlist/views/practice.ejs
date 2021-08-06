@@ -1,19 +1,27 @@
 <html>
     <head>
-        <title><%= title %></title>
+        <title><%= locals.title%></title>
     </head>
     <body>
   <h1> Let's Play With Ejs</h1>
+    
+
+  <h2> Contact_List</h2>
 
 <ul>
-  <% for(let i = 0;i<9;i++){%>
+ <%  for(let i of contact_list){%>
   <li>
-    <%=i%>
-  
-  <%}%>
+    <p><%= i.name%></p>
+    <p><%= i.phone%></p>
+
   </li>
+ <%}%>
+ 
 </ul>
-
-
+<form action ="/create_contact" method="POST">
+  <input = type="text" name = "name" placeholder="Your Name">
+  <input = type="tel" name = "name" placeholder="Phone">
+  <button type="submit"> Add Contact</button>
+</form>
     </body>
 </html>
