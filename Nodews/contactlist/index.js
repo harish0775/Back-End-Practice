@@ -7,7 +7,16 @@ const app = express();
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname ,'views'));
 app.use(express.urlencoded());
-
+app.use(function(req,res,next){
+    req.name = "Harish";
+    console.log('Middleware 1 is called');
+    next();
+})
+app.use(function(req,res,next){
+    
+    console.log('First Middle Ware Name ' ,req.name);
+    next();
+});
 var contactlist=[
   {
       name : "Haris",
@@ -42,7 +51,7 @@ app.post('/create_contact',function(req,res){
     //     name: req.body.name,
     //     phone : req.body.phone
     // });
-    
+   
     contactlist.push(req.body);
 
     return res.redirect('/practice');
