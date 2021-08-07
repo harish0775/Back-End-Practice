@@ -1,0 +1,16 @@
+.contact-container{
+  background-color: rgba(148, 206, 245, 0.959);
+  height: 500px;
+  width: 400px;
+ display: flex;
+ justify-content: space-around;
+ align-items: center;
+
+  padding: 20px;
+}
+.list-container{
+   
+    padding: 20px;
+    
+    background-color: rgba(252, 166, 86, 0.747);
+}

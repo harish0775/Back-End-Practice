@@ -1,41 +1,36 @@
 const http = require('http');
-const port  = 8000;
+const port = 8000;
 const fs = require('fs');
+
 const server = http.createServer(requestHandler);
 
-function requestHandler(req,res){
-    console.log(res.url);
-    res.writeHead(200,{'Content-type' : 'text/html'});
+function requestHandler(res,res){
+    console.log(req.url);
+    res.writeHead(200,{'content-type' : 'text/html'});
+    let filepath;
+    switch(req.url){
+        case'/':
+        filepath = "./index.html"
+        break;
+        case'/profile':
+        filepath = "./profile.html"
+        break;
+        default:
+            filepath = "./404.html"
+    }
 
-let filePath;
-
-switch(req.url){
-    case'/':
-    filePath = './index.html'
-    break;
-    case'/profile':
-    filePath = "./profile.html"
-     break;
-    default :
-       filePath = "./404.html"
 }
-fs.readFile(filePath,function(err,data){
+fs.readFile(filepath,function(err,data){
     if(err){
-        console.log(err,'error');
-        return res.end('<h1> Error!</h1>')
+        console.log('Error',error);
+        return res.end("Error")
     }
     return res.end(data);
+});
+
+server.listen(port,function(err){
+    if(err){
+        console.log("error");
+    }
+    console.log('Server is Running on port:',port);
 })
-
-} 
-
-
-
- server.listen(port,function(err){
-     if(err){
-         console.log(err);
-         return;
-     }
-     console.log('server Runing on port:',port);
- });
-

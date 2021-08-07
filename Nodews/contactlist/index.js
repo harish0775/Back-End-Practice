@@ -42,6 +42,10 @@ app.get('/practice',function(req,res){
     return res.render('practice',{title : "practice abc title",
     contact_list : contactlist })
 })
+app.get('/contact',function(req,res){ 
+    return res.render('contact',{title : "practice abc title",
+    contact_list : contactlist })
+})
 app.get('/form',function(req,res){
     return res.render('Form',{'bg-color' : "red"
 }
@@ -55,7 +59,7 @@ app.post('/create_contact',function(req,res){
    
     contactlist.push(req.body);
 
-    return res.redirect('/practice');
+    return res.redirect('back');
 })
 
 

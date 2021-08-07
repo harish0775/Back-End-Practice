@@ -1,23 +1,26 @@
 <html>
     <head>
         <title><%= locals.title%></title>
+        <link rel="stylesheet" href="/css/index.css">
     </head>
     <body>
   <h1> Let's Play With Ejs</h1>
     
 
   <h2> Contact_List</h2>
-
+<div class = "ul">
 <ul>
  <%  for(let i of contact_list){%>
   <li>
+    <div class = "li">
     <p><%= i.name%></p>
     <p><%= i.phone%></p>
-
+  </div>
   </li>
  <%}%>
  
 </ul>
+</div>
 <form action ="/create_contact" method="POST">
   <input = type="text" name = "name" placeholder="Your Name">
   <input = type="tel" name = "name" placeholder="Phone">

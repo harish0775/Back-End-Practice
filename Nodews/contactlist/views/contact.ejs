@@ -1,0 +1,36 @@
+<html>
+    <head>
+        <title> <%= title %></title>
+        <link rel="stylesheet" href="/css/contact.css">
+       
+    </head>
+    <body>
+  <h1> Contact List Container</h1>
+  <div class = "contact-container">
+      <h1> Heading</h1>
+      
+            <ul>
+             <%  for(let i of contact_list){%>
+              <li>
+                <div class = "list-container">
+                <p><%= i.name%></p>
+                <p><%= i.phone%></p>
+              </div>
+              </li>
+             <%}%>
+             
+            </ul>
+            
+            <form action ="/create_contact" method="POST">
+              <input = type="text" name = "name" placeholder="Your Name">
+              <input = type="tel" name = "name" placeholder="Phone">
+              <button type="submit"> Add Contact</button>
+            </form>
+      </div>
+  
+ 
+   <script rel="text/javascript" src="/js/index.js">
+    
+   </script>
+    </body>
+</html>
