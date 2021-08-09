@@ -21,7 +21,7 @@
                 <div class="list">   
                   <i class="fas fa-address-book"></i>   
                 <div class = "list-container">
-                      <p><%= i.name%></p>
+                            <p><%= i.name%></p>
                      <p id="phone"><%= i.phone%></p>
               </div>
               <div class="delete">
@@ -37,9 +37,9 @@
              <%}%>
             </ul>
       <div class="form">
-            <form action ="/create_contact" method="POST">
+            <form action ="/create_contact/" method="POST">
               <input = type="text" name = "name" placeholder="Your Name"> 
-              <input = type="tel" name = "name" placeholder="Phone"> 
+              <input = type="tel" name = "phone" placeholder="Phone"> 
               <button type="submit"> Add Contact</button>
             </form>
           </div>

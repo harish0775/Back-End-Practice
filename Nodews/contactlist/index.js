@@ -4,16 +4,16 @@ const path = require('path');
 const app = express();
 
 
-app.set('view engine','ejs');
-app.set('views',path.join(__dirname ,'views'));
-// app.use(express.urlencoded());
+app.set('view engine', 'ejs');
+app.set('views', path.join(__dirname, 'views'));
+app.use(express.urlencoded());
 app.use(express.static('assets'));
 // app.use(function(req,res,next){  // middleware
     
 //     console.log('First Middle Ware Name ' ,req.name);
 //     next();
 // });
-var contactlist=[
+var contactList =[
   {
       name : "Harish",
       phone : "1111111111"
@@ -39,7 +39,7 @@ app.get('/practice',function(req,res){
 })
 app.get('/contact',function(req,res){ 
     return res.render('contact',{title : "practice abc title",
-    contact_list : contactlist })
+    contact_list : contactList })
 })
 app.get('/form',function(req,res){
     return res.render('Form',{'bg-color' : "red"
@@ -51,8 +51,8 @@ app.post('/create_contact',function(req,res){
     //     name: req.body.name,
     //     phone : req.body.phone
     // });
-   
-    contactlist.push(req.body);
+    console.log(req.body);
+    contactList.push(req.body);
 
     return res.redirect('back');
 })
@@ -62,10 +62,17 @@ app.post('/create_contact',function(req,res){
 //   let phone  = req.params.phone;
 // });
 
-app.get('/delete-contact/',function(req,res){    // Query perameters
-  console.log(req.query);
-  let phone  = req.query.phone;
- 
+app.get('/delete-contact/', function(req, res){
+    console.log(req.query);
+    let phone = req.query.phone;
+
+    let contactindex = contactList.findIndex(contact => contact.phone == phone);
+
+    if(contactindex != -1){
+        contactList.splice(contactindex, 1);
+    }
+
+    return res.redirect('back');
 });
 app.listen(port,function(err){
     if(err){

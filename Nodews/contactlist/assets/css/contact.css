@@ -16,7 +16,7 @@ ul{
 }
 .contact-container{
   /* background-color: rgba(206, 226, 240, 0.959); */
-  height: auto;
+  height: fit-content;
   width: fit-content;
   padding: 20px 10px;
   display: flex;
