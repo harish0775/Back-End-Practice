@@ -1,16 +1,122 @@
-.contact-container{
-  background-color: rgba(148, 206, 245, 0.959);
-  height: 500px;
-  width: 400px;
- display: flex;
- justify-content: space-around;
- align-items: center;
+body{
+  
+  display: flex;
+  justify-content: space-around;
+  font-family: 'STIX Two Text', serif;
+}
 
-  padding: 20px;
+.heading{
+  background-color: rgba(206, 247, 227, 0.479);
+ border-radius: 2px;
+ text-align: center;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+ul{
+  list-style-type: none;
+}
+.contact-container{
+  /* background-color: rgba(206, 226, 240, 0.959); */
+  height: auto;
+  width: fit-content;
+  padding: 20px 10px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(78, 75, 75, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  
+
 }
 .list-container{
-   
-    padding: 20px;
-    
-    background-color: rgba(252, 166, 86, 0.747);
+   height: auto;
+   width: 100%;
+   background-color: rgba(248, 178, 239, 0.295);
+   border-radius: 0px 3px 3px 0px;
+   display: flex;
+    text-align: center;
+    flex-direction:row ;
+    margin: 2px;
+    justify-content: space-between;
+    padding: 2px 6px 2px 6px;
+    font-family: 'STIX Two Text', serif;
+
+}
+i{
+   color: rgb(3, 3, 3);
+}
+/* .list-container > p{
+  padding:15px 3px 15px 7px;
+  margin: 2px;
+  border-radius : 5px;
+} */
+.form{
+  /* background-color: cornflowerblue; */
+  display: flex;
+  flex-direction: row;
+   margin-left: 42px;
+
+}
+
+input[type=text]{
+  
+  background-color: rgb(244, 247, 247);
+  height:30px;
+  width: 120px;
+  border: 2px solid rgb(247, 243, 243);
+  border-radius: 4px;
+
+  
+}
+input[type=tel]{
+  height:30px;
+  width: 110px;
+  border: 2px solid rgb(247, 243, 243);
+  border-radius: 4px;
+}
+button[type= submit]{
+  color: rgb(248, 252, 249);
+  margin-left: 15px;
+  background-color: rgb(61, 128, 34);
+  height:40px;
+  width: 100px;
+ border-radius: 4px;
+ border: 2px solid rgb(46, 128, 53);
+}
+button[type = submit]:hover {
+  background-color: #45a049;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.delete{
+background-color: rgb(246, 247, 241);
+box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+display: flex;
+justify-content: space-around;
+padding-top: 20px;
+height: auto;
+width: 50px;
+border-radius:4px;
+margin: 2px;
+
+}
+.delete:hover{
+  background-color: rgb(241, 203, 193);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.342), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.fa-trash-alt{
+  color:rgb(236, 112, 112);
+}
+.fa-address-book{
+  padding: 12px;
+  font-size: 30px;
+}
+#phone{
+  color: blue
+}
+
+.list{
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.075), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  display: flex;
+  flex-direction: row;
+  margin: 2px;
+  border-radius: 4px;
 }

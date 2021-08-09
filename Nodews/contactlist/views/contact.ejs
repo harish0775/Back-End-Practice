@@ -2,35 +2,50 @@
     <head>
         <title> <%= title %></title>
         <link rel="stylesheet" href="/css/contact.css">
-       
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@500&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+
     </head>
     <body>
-  <h1> Contact List Container</h1>
   <div class = "contact-container">
-      <h1> Heading</h1>
-      
+    <div class = "Heading">
+      <h1><i class="fas fa-address-book"></i> Contact List Container</h1> </div>
+      <!-- <i class="fas fa-address-book"></i> -->
+      <!-- <i class="fas fa-trash-alt"></i> -->
             <ul>
              <%  for(let i of contact_list){%>
-              <li>
+              <li> 
+                <div class="list">   
+                  <i class="fas fa-address-book"></i>   
                 <div class = "list-container">
-                <p><%= i.name%></p>
-                <p><%= i.phone%></p>
+                      <p><%= i.name%></p>
+                     <p id="phone"><%= i.phone%></p>
+              </div>
+              <div class="delete">
+                <!-- <a href="/delete/contact/<%=i.phone%>">     // Params Perameters-->  
+                  <!-- <a href="/delete-contact/?phone=<%= i.phone%>&name= <%= i.name%>">   Query parameters-->
+                    <a href="/delete-contact/?phone=<%= i.phone %>">
+                    <i class="fas fa-trash-alt"></i>
+                  </a> 
+                
+            </div>
               </div>
               </li>
              <%}%>
-             
             </ul>
-            
+      <div class="form">
             <form action ="/create_contact" method="POST">
-              <input = type="text" name = "name" placeholder="Your Name">
-              <input = type="tel" name = "name" placeholder="Phone">
+              <input = type="text" name = "name" placeholder="Your Name"> 
+              <input = type="tel" name = "name" placeholder="Phone"> 
               <button type="submit"> Add Contact</button>
             </form>
+          </div>
       </div>
-  
- 
    <script rel="text/javascript" src="/js/index.js">
-    
+
    </script>
     </body>
 </html>

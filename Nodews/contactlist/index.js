@@ -6,33 +6,28 @@ const app = express();
 
 app.set('view engine','ejs');
 app.set('views',path.join(__dirname ,'views'));
-app.use(express.urlencoded());
+// app.use(express.urlencoded());
 app.use(express.static('assets'));
-app.use(function(req,res,next){
-    req.name = "Harish";
-    console.log('Middleware 1 is called');
-    next();
-})
-app.use(function(req,res,next){
+// app.use(function(req,res,next){  // middleware
     
-    console.log('First Middle Ware Name ' ,req.name);
-    next();
-});
+//     console.log('First Middle Ware Name ' ,req.name);
+//     next();
+// });
 var contactlist=[
   {
-      name : "Haris",
-      phone : "931913910"
+      name : "Harish",
+      phone : "1111111111"
   },{
       name: "Krish",
-      phone : "00001"
+      phone : "2222222222"
   },
   {
       name : "Kalpna",
-      phone : "11111"
+      phone : "333231233"
   },
   {
       name : "Don",
-      phone : "2309209300"
+      phone : "9319323123"
   }
 ]
 app.get('/',function(req,res){
@@ -62,7 +57,16 @@ app.post('/create_contact',function(req,res){
     return res.redirect('back');
 })
 
+// app.get('/delete/contact/:phone',function(req,res){    // params perameters
+//   console.log(req.params);
+//   let phone  = req.params.phone;
+// });
 
+app.get('/delete-contact/',function(req,res){    // Query perameters
+  console.log(req.query);
+  let phone  = req.query.phone;
+ 
+});
 app.listen(port,function(err){
     if(err){
         console.log('Error',err);
