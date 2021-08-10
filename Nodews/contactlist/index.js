@@ -47,11 +47,21 @@ app.post('/create_contact',function(req,res){
     //     name: req.body.name,
     //     phone : req.body.phone
     // });
-    console.log(req.body);
-    contactList.push(req.body);
-
-    return res.redirect('back');
-})
+    // console.log(req.body);
+    // contactList.push(req.body);
+    contact.create({
+        name : req.body.name,
+        phone : req.body.phone
+    },function(err,newContact){
+        if(err){
+            console.log('error in create contact list');
+            return;
+        }
+            console.log('*****',newContact);
+            return res.redirect('back')
+        
+    });
+});
 
 // app.get('/delete/contact/:phone',function(req,res){    // params perameters
 //   console.log(req.params);
