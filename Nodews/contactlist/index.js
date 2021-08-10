@@ -33,15 +33,25 @@ app.get('/practice',function(req,res){
     return res.render('practice',{title : "practice abc title",
     contact_list : contactlist })
 })
-app.get('/contact',function(req,res){ 
-    return res.render('contact',{title : "practice abc title",
-    contact_list : contactList })
-})
+app.get('/contact',function(req,res){
+
+    contact.find({},function(err,contacts){
+        if(err){
+            console.log('Error in fetching contact from db');
+            return;
+        }
+        return res.render('contact',{
+            title : "practice abc title",
+        contact_list :  contacts
+    });
+});
+});
 app.get('/form',function(req,res){
     return res.render('Form',{'bg-color' : "red"
 }
     )
 })
+
 app.post('/create_contact',function(req,res){
     // contactlist.push({
     //     name: req.body.name,
@@ -69,16 +79,17 @@ app.post('/create_contact',function(req,res){
 // });
 
 app.get('/delete-contact/', function(req, res){
-    console.log(req.query);
-    let phone = req.query.phone;
-
-    let contactindex = contactList.findIndex(contact => contact.phone == phone);
-
-    if(contactindex != -1){
-        contactList.splice(contactindex, 1);
-    }
-
-    return res.redirect('back');
+      //get the id from query in the ul
+     let id = req.query.id;
+     
+     //find the contact in the database using id and delete 
+     contact.findByIdAndDelete(id,function(err){
+         if(err){
+            console.log('error in deleting from database')  ;
+            return; 
+         }
+         return res.redirect('back');
+     })
 });
 app.listen(port,function(err){
     if(err){
