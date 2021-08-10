@@ -3,16 +3,12 @@ const port = 9000;
 const path = require('path');
 const app = express();
 
-
+const db = require('./config/mongoose');
+const contact = require('./model/contact')
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 app.use(express.urlencoded());
 app.use(express.static('assets'));
-// app.use(function(req,res,next){  // middleware
-    
-//     console.log('First Middle Ware Name ' ,req.name);
-//     next();
-// });
 var contactList =[
   {
       name : "Harish",
