@@ -1,14 +1,19 @@
 const express = require('express');
 const app = express();
 const port  = 8000;
+const expressLayouts = require('express-ejs-layouts');
 
+app.use(expressLayouts);
 
-
-//setup viewds engine
+//setup views engine
 app.set('view engine','ejs');
 app.set('views','./views');
+
+//redirect from Router 
 app.use('/',require('./routes'));
-app.listen(port,function(err){  // I push on git this folder still show green
+
+// Listen Port
+app.listen(port,function(err){  
     if(err){
         console.log('Error in Running Server',err); 
         // Instate of Use this We Can use bactisks(``)  this we called as interpolation

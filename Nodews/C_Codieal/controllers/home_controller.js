@@ -1,6 +1,5 @@
  
- //module.exports.actionName  = function(req,res)
- // home Send to Router from this file(home_controller)
+ //here we Render Page(home.ejs) instate of end(res.end).
  module.exports.home = function(req,res){
    return res.render('home',{
       title : "Hello world"
