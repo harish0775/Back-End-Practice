@@ -1,9 +1,14 @@
 const express = require('express');
+//require Cookies-parser to store User(most visit websites)
+const cookie_parser = require('cookie-parser');
 const app = express();
 const port  = 8000;
 const expressLayouts = require('express-ejs-layouts');
 app.use(expressLayouts);
 const db = require('./config/mongoose');
+app.use(express.urlencoded());
+app.use(cookie_parser());
+
 app.use(express.static('./assets'));
 app.set('layout extractStyles',true);  
 app.set('layout extractScripts',true);
