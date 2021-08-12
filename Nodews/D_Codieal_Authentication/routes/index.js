@@ -9,7 +9,6 @@ const home_controller_router = require('../controllers/home_controller');
 
   // this is Home Landing Router
  router.get('/',home_controller_router.home);
-
   // if Any Request Regards another Like users/Profile , users/ Comments , User/Account 
    //  this all r Handle  another router(file)-> users.js 
    // home Page Redirect to user.js Router  followed By   ( / Users)
