@@ -82,3 +82,7 @@ module.exports.create_session = function(req, res){
 
     });
 }
+
+module.exports.createSession = function(req, res){
+    return res.redirect('/');
+}
