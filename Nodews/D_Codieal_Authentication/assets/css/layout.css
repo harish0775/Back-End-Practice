@@ -1,7 +1,7 @@
-body{
-    /* background-color: rgb(196, 255, 201); */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-}
+body {
+  /* background-color: rgb(196, 255, 201); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: beige; }
