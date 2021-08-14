@@ -1,27 +1,32 @@
 const express = require('express');
-//require Cookies-parser to store User(most visit websites)
-const cookie_parser = require('cookie-parser');
+const cookieParser = require('cookie-parser');
 const app = express();
-const port  = 9000;
+const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
-app.use(expressLayouts);
 const db = require('./config/mongoose');
-//Use for Session Cookie
+// used for session cookie
 const session = require('express-session');
 const passport = require('passport');
-const passportLocal = require('./config/passport-local-strategy')
+const passportLocal = require('./config/passport-local-strategy');
+
 app.use(express.urlencoded());
-app.use(cookie_parser());
+
+app.use(cookieParser());
 
 app.use(express.static('./assets'));
-app.set('layout extractStyles',true);  
-app.set('layout extractScripts',true);
-//setup views engine
-app.set('view engine','ejs');
-app.set('views','./views');
+
+app.use(expressLayouts);
+// extract style and scripts from sub pages into the layout
+app.set('layout extractStyles', true);
+app.set('layout extractScripts', true);
 
 
-// Listen Port
+
+
+// set up the view engine
+app.set('view engine', 'ejs');
+app.set('views', './views');
+
 
 app.use(session({
     name: 'codeial',
@@ -37,16 +42,16 @@ app.use(session({
 app.use(passport.initialize());
 app.use(passport.session());
 
+app.use(passport.setAuthenticatedUser);
+
 // use express router
 app.use('/', require('./routes'));
 
 
-app.listen(port,function(err){  
-    if(err){
-        console.log('Error in Running Server',err); 
-        // Instate of Use this We Can use bactisks(``)  this we called as interpolation
-        console.log(`Error in Running  the Server :${err}`);
+app.listen(port, function(err){
+    if (err){
+        console.log(`Error in running the server: ${err}`);
     }
-    //evalute mathematical expression inside {}
-    console.log(`Listen : Server is Running on port: ${port}`);
+
+    console.log(`Server is running on port: ${port}`);
 });
