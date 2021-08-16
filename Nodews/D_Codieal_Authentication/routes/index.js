@@ -16,6 +16,8 @@ const home_controller_router = require('../controllers/home_controller');
    // Redirect to another Router to use ( router.use(./'users(use in http)',require('./users(redirect file name))));
  router.use('/users',require('./users'));
  router.use('/posts', require('./posts'));
+ router.use('/comments', require('./comments'));
 console.log("My router is  Running fine");
 
 module.exports = router;
+
