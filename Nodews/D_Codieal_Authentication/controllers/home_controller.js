@@ -24,8 +24,12 @@ module.exports.home = function(req, res){
         }
     })
     .exec(function(err, posts){
-
+        // is this correct code, could u pls rematch it 
+        //okay
+        
         User.find({}, function(err, users){
+            console.log("posts-->", posts); 
+            console.log("users-->", users); 
             return res.render('home', {
                 title: "Codeial | Home",
                 posts:  posts,

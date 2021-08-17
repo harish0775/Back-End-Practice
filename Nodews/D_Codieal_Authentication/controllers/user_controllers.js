@@ -22,7 +22,7 @@ module.exports.update = function(req, res){
 // render the sign up page
 module.exports.Sign_Up = function(req, res){
     if (req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect(`/users/profile/${req.user.id}`);
     }
     return res.render('Sign_Up', {
         title: "Codeial | Sign Up"
@@ -33,7 +33,7 @@ module.exports.Sign_Up = function(req, res){
 // render the sign in page
 module.exports.Sign_In = function(req, res){
     if (req.isAuthenticated()){
-        return res.redirect('/users/profile');
+        return res.redirect(`/users/profile/${req.user.id}`);
     }
     return res.render('Sign_In', {
         title: "Codeial | Sign In"
@@ -63,7 +63,7 @@ module.exports.create = function(req, res){
 }
 // sign in and create a session for the user
 module.exports.createSession = function(req, res){
-    return res.redirect('/users/profile');
+    return res.redirect(`/users/profile/${req.user.id}`);
 }
 module.exports.destroySession = function(req, res){
     req.logout();

@@ -19,3 +19,8 @@ const commentSchema = new mongoose.Schema({
 
 const Comment = mongoose.model('Comment', commentSchema);
 module.exports = Comment;
+
+
+// Bro u have wrong DB connection, here collection na
+//local host mongoose and Robot 3t Both r same Name
+// wait See
