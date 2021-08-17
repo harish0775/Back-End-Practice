@@ -1,4 +1,4 @@
-const User = require('../models/users');
+const User = require('../models/user');
 
 module.exports.profile = function(req, res){
     User.findById(req.params.id, function(err, user){
