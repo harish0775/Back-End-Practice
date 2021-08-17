@@ -32,7 +32,7 @@ module.exports.Sign_Up = function(req, res){
 
 // render the sign in page
 module.exports.Sign_In = function(req, res){
-    if (req.isAuthenticated()){
+    if (req.isAuthenticated()){  
         return res.redirect(`/users/profile/${req.user.id}`);
     }
     return res.render('Sign_In', {
