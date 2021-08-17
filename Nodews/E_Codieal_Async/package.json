@@ -30,6 +30,7 @@
     "cliui": "^5.0.0",
     "code-point-at": "^1.1.0",
     "combined-stream": "^1.0.8",
+    "connect-flash": "^0.1.1",
     "connect-mongo": "^4.4.1",
     "console-control-strings": "^1.1.0",
     "controllers": "^0.0.2",
@@ -206,7 +207,7 @@
     "yargs-parser": "^13.1.2"
   },
   "scripts": {
-    "start":"nodemon",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Harish Nishad",
