@@ -1,20 +1,21 @@
-const { populate } = require('../models/post');
 const Post = require('../models/post');
+const User = require('../models/user');
 
- //here we Render Page(home.ejs) instate of end(res.end).
- module.exports.home = function(req, res){
-  // console.log(req.cookies);
-  // res.cookie('user_id', 25);
 
-  // Post.find({}, function(err, posts){
-  //     return res.render('home', {
-  //         title: "Codeial | Home",
-  //         posts:  posts
-  //     });
-  // });
 
-  // populate the user of each post
-  Post.find({})
+module.exports.home = function(req, res){
+    // console.log(req.cookies);
+    // res.cookie('user_id', 25);
+
+    // Post.find({}, function(err, posts){
+    //     return res.render('home', {
+    //         title: "Codeial | Home",
+    //         posts:  posts
+    //     });
+    // });
+
+    // populate the user of each post
+    Post.find({})
     .populate('user')
     .populate({
         path: 'comments',
@@ -23,10 +24,16 @@ const Post = require('../models/post');
         }
     })
     .exec(function(err, posts){
-        return res.render('home', {
-            title: "Codeial | Home",
-            posts:  posts
+
+        User.find({}, function(err, users){
+            return res.render('home', {
+                title: "Codeial | Home",
+                posts:  posts,
+                all_users: users
+            });
         });
+
+       
     })
 
 }
