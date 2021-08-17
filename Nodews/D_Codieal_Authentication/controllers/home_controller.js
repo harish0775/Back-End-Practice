@@ -1,3 +1,4 @@
+const { populate } = require('../models/post');
 const Post = require('../models/post');
 
  //here we Render Page(home.ejs) instate of end(res.end).
@@ -13,12 +14,20 @@ const Post = require('../models/post');
   // });
 
   // populate the user of each post
-  Post.find({}).populate('user').exec(function(err, posts){
-      return res.render('home', {
-          title: "Codeial | Home",
-          posts:  posts
-      });
-  })
+  Post.find({})
+    .populate('user')
+    .populate({
+        path: 'comments',
+        populate: {
+            path: 'user'
+        }
+    })
+    .exec(function(err, posts){
+        return res.render('home', {
+            title: "Codeial | Home",
+            posts:  posts
+        });
+    })
 
 }
 
