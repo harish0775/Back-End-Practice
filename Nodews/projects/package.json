@@ -1,0 +1,42 @@
+{
+  "name": "projects",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "bl": "^2.2.1",
+    "bluebird": "^3.5.1",
+    "bson": "^1.1.6",
+    "controllers": "^0.0.2",
+    "cookie-parser": "^1.4.5",
+    "core-util-is": "^1.0.2",
+    "denque": "^1.5.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "express-ejs-layouts": "^2.5.1",
+    "express-router": "^0.0.1",
+    "isarray": "^1.0.0",
+    "kareem": "^2.3.2",
+    "memory-pager": "^1.5.0",
+    "mongodb": "^3.6.11",
+    "mongoose": "^5.13.6",
+    "mongoose-legacy-pluralize": "^1.0.2",
+    "mpath": "^0.8.3",
+    "mquery": "^3.2.5",
+    "optional-require": "^1.0.3",
+    "process-nextick-args": "^2.0.1",
+    "readable-stream": "^2.3.7",
+    "regexp-clone": "^1.0.0",
+    "saslprep": "^1.0.3",
+    "sift": "^13.5.2",
+    "sliced": "^1.0.1",
+    "sparse-bitfield": "^3.0.3",
+    "string_decoder": "^1.1.1",
+    "util-deprecate": "^1.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Harish Nishad",
+  "license": "ISC"
+}
