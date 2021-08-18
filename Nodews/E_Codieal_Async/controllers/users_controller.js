@@ -28,25 +28,25 @@ module.exports.update = function(req, res){
 
 
 // render the sign up page
-module.exports.Sign_Up = function(req, res){
+module.exports.SignUp = function(req, res){
     if (req.isAuthenticated()){
         return res.redirect(`/users/profile/${req.user.id}`);
     }
 
 
-    return res.render('Sign_Up', {
+    return res.render('user_sign_up', {
         title: "Codeial | Sign Up"
     })
 }
 
 
 // render the sign in page
-module.exports.Sign_In = function(req, res){
+module.exports.SignIn = function(req, res){
 
     if (req.isAuthenticated()){
         return res.redirect(`/users/profile/${req.user.id}`);
     }
-    return res.render('Sign_In', {
+    return res.render('user_sign_in', {
         title: "Codeial | Sign In"
     })
 }

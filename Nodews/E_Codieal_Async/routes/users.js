@@ -2,13 +2,13 @@ const express = require('express');
 const router = express.Router();
 const passport = require('passport');
 
-const usersController = require('../controllers/user_controllers');
+const usersController = require('../controllers/users_controller');
 
 router.get('/profile/:id', passport.checkAuthentication, usersController.profile);
 router.post('/update/:id', passport.checkAuthentication, usersController.update);
 
-router.get('/Sign_Up', usersController.Sign_Up);
-router.get('/Sign_In', usersController.Sign_In);
+router.get('/Sign_Up', usersController.SignUp);
+router.get('/Sign_In', usersController.SignIn);
 
 router.post('/create', usersController.create);
 
