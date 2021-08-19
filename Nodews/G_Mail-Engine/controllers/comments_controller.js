@@ -3,6 +3,7 @@ const Post = require('../models/post');
 const commentsMailer = require('../mailers/comments_mailer');
 const queue = require('../config/kue');
 const commentEmailWorker = require('../workers/comment_email_worker');
+const Like = require('../models/like');
 
 module.exports.create = async function(req, res){
 
@@ -15,8 +16,6 @@ module.exports.create = async function(req, res){
                 post: req.body.post,
                 user: req.user._id
             });
- 
-
 
             post.comments.push(comment);
             post.save();
