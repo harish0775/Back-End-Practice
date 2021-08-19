@@ -1,6 +1,6 @@
  const mongoose = require('mongoose');
 
-mongoose.connect('mongodb://localhost/API-Codieal-Development');
+mongoose.connect('mongodb://localhost/Codieal-Development');
 const db = mongoose.connection;
 
 db.on('error',console.error.bind(console,"Error On running Mongoose_db"));
