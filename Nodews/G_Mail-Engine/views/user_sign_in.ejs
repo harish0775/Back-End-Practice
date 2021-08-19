@@ -1,0 +1,38 @@
+
+<link rel="stylesheet" href="/css/Sign_In.css">
+
+<div class = "Sign-Up_Container">
+    <div class = "heading"><h1> Sign_In</h1></div>
+    <div  class  = "form-with-img">
+      <div class="image"> 
+        <img src="https://www.state.gov/wp-content/uploads/2021/06/AI-Motherboard-scaled.jpg" alt="Paris" >
+      </div>
+      <div class="form-container">
+    <form action="/users/create-session" method="POST" class = "form" >
+        <div class="input">
+     <label > Email</label>
+     <input type = "email" name = "email" placeholder = "harish@gmail" id = "email"></input><br>
+     <label > password </label>
+     <input type = "password" name = "password" placeholder = "harish123" id = "password"></input>
+    </div>
+    <div class = "button">
+    <button type = "submit">SignIn</button>
+     </div>
+    </form>
+    <div class = "social-container">
+        <ul>
+            <a  href="/users/auth/google"><i class="fab fa-google"></i></a>
+            <a  href="#Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a  href="#github"><i class="fab fa-github"></i></a>
+          </ul>
+    </div>
+   <div id = "logo">
+     <p> <small> Powered By</small> BeCisco</p>
+   </div>
+</div>
+
+</div>
+</div>
+<p>
+  <a href="/users/auth/google">Google Sign In/Sign Up</a>
+</p>
