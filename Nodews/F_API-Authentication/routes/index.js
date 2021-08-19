@@ -18,6 +18,6 @@ const home_controller_router = require('../controllers/home_controller');
  router.use('/posts', require('./posts'));
  router.use('/comments', require('./comments'));
 console.log("My router is  Running fine");
-
+router.use('/api', require('./api'));
 module.exports = router;
 
