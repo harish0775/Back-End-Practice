@@ -182,6 +182,7 @@
     "node-gyp": "^3.8.0",
     "node-sass": "^4.14.1",
     "node-sass-middleware": "^0.11.0",
+    "nodemailer": "^6.6.3",
     "nodemon": "^2.0.12",
     "nopt": "^3.0.6",
     "normalize-package-data": "^2.5.0",
@@ -312,7 +313,8 @@
     "yargs": "^13.3.2",
     "yargs-parser": "^13.1.2"
   },
-  "scripts": {   "start": "nodemon",
+  "scripts": {
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Harish Nishad",
