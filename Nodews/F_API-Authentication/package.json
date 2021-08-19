@@ -139,6 +139,7 @@
     "json-schema": "^0.2.3",
     "json-schema-traverse": "^0.4.1",
     "json-stringify-safe": "^5.0.1",
+    "jsonwebtoken": "^8.5.1",
     "jsprim": "^1.4.1",
     "kareem": "^2.3.2",
     "keyv": "^3.1.0",
