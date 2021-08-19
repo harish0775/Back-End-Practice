@@ -190,6 +190,7 @@
     "package-json": "^6.5.0",
     "parse-json": "^2.2.0",
     "passport": "^0.4.1",
+    "passport-jwt": "^4.0.0",
     "passport-local": "^1.0.0",
     "passport-strategy": "^1.0.0",
     "path-exists": "^2.1.0",
@@ -291,7 +292,7 @@
     "yargs-parser": "^13.1.2"
   },
   "scripts": {
-    "start" : "nodemon",
+    "start": "nodemon",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Harish Nishad",
