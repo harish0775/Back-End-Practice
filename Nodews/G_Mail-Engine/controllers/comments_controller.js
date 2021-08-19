@@ -15,6 +15,8 @@ module.exports.create = async function(req, res){
                 post: req.body.post,
                 user: req.user._id
             });
+ 
+
 
             post.comments.push(comment);
             post.save();
