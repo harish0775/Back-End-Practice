@@ -83,5 +83,3 @@ app.listen(port, function(err){
 });
 
 
-git add .
-git commit -m"add file"
