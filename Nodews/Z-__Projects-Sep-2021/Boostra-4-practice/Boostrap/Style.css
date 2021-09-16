@@ -1,0 +1,8 @@
+.header .navbar .container-fluid .navbar-brand img{
+         border-radius: 5px;
+         height: 40px;
+         width: 60px;
+         object-fit: contain;
+         color: azure;
+        
+      }
