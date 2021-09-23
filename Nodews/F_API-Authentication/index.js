@@ -18,7 +18,7 @@ app.use(sassMiddleware({
     src: './assets/scss',
     dest: './assets/css',
     debug: true,
-    outputStyle: 'extended',   
+    outputStyle: 'extended',      
     prefix: '/css' 
 }));
 app.use(express.urlencoded());
@@ -85,3 +85,5 @@ app.listen(port, function(err){
 
 
        
+
+console.log(Date());

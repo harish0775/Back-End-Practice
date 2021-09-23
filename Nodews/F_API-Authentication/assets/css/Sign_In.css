@@ -1,4 +1,5 @@
 
+
 .Sign-Up_Container{
     /* border: 2px solid green; */
     /* background-color: rgb(98, 240, 233); */
@@ -26,9 +27,9 @@
 }
 .heading{
     text-align: center;
-    color: blue;
+    color: rgb(144, 144, 209);
     padding: 2px;
-    margin: 0px;
+    margin: 0px;  
 
 }
 .image img{
@@ -91,7 +92,7 @@ button[type = "submit"]:hover{
     background-color: rgb(192, 192, 204);
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(189, 189, 183, 0.19);
 }
-
+   
  input[type = "text"]{
      height: 30px;
      width: 90%;
