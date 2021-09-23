@@ -22,9 +22,9 @@ app.use(sassMiddleware({
     prefix: '/css' 
 }));   
 app.use(express.urlencoded());
-
+    
 app.use(cookieParser());
-
+   
 app.use(express.static('./assets'));
 
 //make the Upload File Avaibile to the Browser
